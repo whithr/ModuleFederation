@@ -6,7 +6,7 @@ function Footer() {
       <footer className="text-center text-lg-start bg-light text-muted">
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div className="me-5 d-none d-lg-block">
-            <span>HOT</span>
+            <span>TESTING</span>
           </div>
           <div>
             <a href="" className="me-4 text-reset">

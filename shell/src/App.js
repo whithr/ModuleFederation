@@ -33,7 +33,7 @@ const list = [
 const App = () => {
   return (
     <div>
-      SHELL
+      SHELLtest
       <Suspense fallback={"loading..."}>
         <Navbar organizationName="Media Unit" />
         <CardList list={list} />
