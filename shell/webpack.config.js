@@ -1,5 +1,6 @@
+var webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {ModuleFederationPlugin} = require("webpack").container;
+const { ModuleFederationPlugin } = require("webpack").container;
 const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 const path = require("path");
 
@@ -9,6 +10,11 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "dist"),
     port: 3000,
+    hot: true,
+    open: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
   output: {
     publicPath: "auto",
@@ -32,12 +38,12 @@ module.exports = {
         app1: "app1@http://localhost:3001/remoteEntry.js",
         app2: "app2@http://localhost:3002/remoteEntry.js",
       },
-      shared: {react: {singleton: true}, "react-dom": {singleton: true}},
+      shared: { react: { singleton: true }, "react-dom": { singleton: true } },
     }),
     new ExternalTemplateRemotesPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
-

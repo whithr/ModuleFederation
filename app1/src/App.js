@@ -1,14 +1,13 @@
 import React from "react";
-import Button from "./Components/Button"
+import Button from "./Components/Button";
 import Navbar from "./Components/Navbar";
 
-const App = ({component}) => {
+const App = ({ component }) => {
   return (
     <div>
-    <Navbar/>
+      <Navbar />
     </div>
-  )
-}
+  );
+};
 
 export default App;
-
